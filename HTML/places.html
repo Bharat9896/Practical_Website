@@ -5,32 +5,84 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Travel Guide | Places</title>
 <link rel="stylesheet" href="../CSS/style.css" />
-<!-- <style>
-    body{font-family:Arial;background:#f0f6ff;margin:0;padding:0;}
-    header{background:#0b3d91;color:white;text-align:center;padding:20px;}
-    nav a{color:white;margin:0 12px;text-decoration:none;font-weight:bold;}
-    nav a:hover{color:#ffdd57;}
 
-    .sec-heading{text-align:center;color:#0b3d91;font-size:28px;margin-top:30px;}
-    .places-intro p{font-size:17px;line-height:1.6;}
+<style>
+/* --- EXTRA STYLING FOR THIS PAGE ONLY --- */
 
-    table{width:85%;margin:25px auto;background:white;border-collapse:collapse;border-radius:10px;overflow:hidden;box-shadow:0 0 12px rgba(0,0,0,0.1);}    
-    th,td{border:1px solid #ccc;padding:12px;text-align:center;font-size:16px;}
-    th{background:#0b3d91;color:white;font-size:18px;}
-    tr:hover{background:#eef3ff;}
+.search-area {
+    width: 85%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
 
-    iframe{width:80%;height:350px;border:2px solid #0b3d91;border-radius:10px;}
+.search-area input,
+.search-area select {
+    width: 50%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #0b3d91;
+    font-size: 15px;
+}
 
-    .places-frame{text-align:center;margin:40px 0;}
+#details-box {
+    width: 80%;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 12px;
+    background: #fff7cc;
+    display: none;
+    border-left: 6px solid #0b3d91;
+}
 
-</style> -->
+#details-box h3 {
+    margin-bottom: 10px;
+    color: #0b3d91;
+}
+
+/* Suggest form */
+.suggest-form {
+    width: 80%;
+    margin: 40px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    border: 2px solid #0b3d91;
+}
+
+.suggest-form input,
+.suggest-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #aaa;
+}
+
+.suggest-form button {
+    padding: 10px 20px;
+    background: #0b3d91;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.suggest-form button:hover {
+    background: #062a63;
+}
+
+</style>
 </head>
+
 <body>
 <header>
 <h1>Top Places</h1>
 <nav>
 <a href="index.html">Home</a>
-<a href="places.html">Places</a>
+<a class="active" href="places.html">Places</a>
 <a href="gallery.html">Gallery</a>
 <a href="contact.html">Contact</a>
 <a href="info.html">Info</a>
@@ -39,51 +91,142 @@
 
 <section class="places-intro">
 <h2 class="sec-heading">World Famous Travel Destinations</h2>
-<p style="text-align:center; width:80%; margin:auto;">Explore some of the most popular cities loved by travelers around the globe. Data includes region, best month to visit, and travel type.</p>
+<p style="text-align:center; width:80%; margin:auto;">
+Explore popular cities loved by travelers worldwide.  
+Use search + filters to find the perfect destination.
+</p>
 </section>
 
-<table class="places-table">
+<!-- SEARCH + FILTER SECTION -->
+<div class="search-area">
+    <input type="text" id="searchBox" placeholder="Search city...">
+
+    <select id="categoryFilter">
+        <option value="">All Categories</option>
+        <option value="Romantic">Romantic</option>
+        <option value="Modern Culture">Modern Culture</option>
+        <option value="Urban">Urban</option>
+        <option value="Luxury">Luxury</option>
+    </select>
+</div>
+
+<!-- TABLE -->
+<table class="places-table" id="placesTable">
 <tr>
 <th>Image</th>
-<th>City</th></th>
+<th>City</th>
 <th>Country</th>
 <th>Best Time</th>
 <th>Category</th>
 </tr>
-<tr>
-<td><img src="../images/paris.png" style="width:100px;height:70px;object-fit:cover;border-radius:6px;" /></td>
+
+<tr onclick="showDetails('Paris', 'France', 'April – June', 'Romantic')">
+<td><img src="../images/paris.png" class="tbl-img" /></td>
 <td>Paris</td>
 <td>France</td>
 <td>April - June</td>
 <td>Romantic</td>
 </tr>
-<tr>
-<td><img src="../images/tokyo.png" style="width:100px;height:70px;object-fit:cover;border-radius:6px;" /></td>
+
+<tr onclick="showDetails('Tokyo', 'Japan', 'March – May', 'Modern Culture')">
+<td><img src="../images/tokyo.png" class="tbl-img" /></td>
 <td>Tokyo</td>
 <td>Japan</td>
 <td>March - May</td>
 <td>Modern Culture</td>
 </tr>
-<tr>
-<td><img src="../images/newyork.png" style="width:100px;height:70px;object-fit:cover;border-radius:6px;" /></td>
+
+<tr onclick="showDetails('New York', 'USA', 'April – October', 'Urban')">
+<td><img src="../images/newyork.png" class="tbl-img" /></td>
 <td>New York</td>
 <td>USA</td>
 <td>April - October</td>
 <td>Urban</td>
 </tr>
-<tr>
-<td><img src="../images/dubai.png" style="width:100px;height:70px;object-fit:cover;border-radius:6px;" /></td>
+
+<tr onclick="showDetails('Dubai', 'UAE', 'November – March', 'Luxury')">
+<td><img src="../images/dubai.png" class="tbl-img" /></td>
 <td>Dubai</td>
 <td>UAE</td>
 <td>November - March</td>
 <td>Luxury</td>
 </tr>
+
 </table>
+
+<!-- DETAILS BOX -->
+<div id="details-box">
+    <h3 id="d-title"></h3>
+    <p id="d-info"></p>
+</div>
 
 <section class="places-frame">
 <h2 class="sec-heading">Featured Destination Frame</h2>
 <iframe src="https://en.wikivoyage.org/wiki/Paris" class="frame-box"></iframe>
 </section>
+
+<!-- SUGGEST A PLACE FORM -->
+<section>
+<h2 class="sec-heading">Suggest a New Travel Place</h2>
+
+<form class="suggest-form">
+<input type="text" placeholder="City Name" required>
+<input type="text" placeholder="Country" required>
+<input type="text" placeholder="Best Time to Visit" required>
+
+<select>
+<option>Romantic</option>
+<option>Adventure</option>
+<option>Urban</option>
+<option>Nature</option>
+<option>Luxury</option>
+</select>
+
+<button type="submit">Submit</button>
+</form>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<p>© 2025 Travel Guide | All Rights Reserved</p>
+</footer>
+
+<script>
+// --- SEARCH FUNCTION ---
+document.getElementById("searchBox").addEventListener("keyup", function () {
+    const value = this.value.toLowerCase();
+    const rows = document.querySelectorAll("#placesTable tr");
+
+    rows.forEach((row, index) => {
+        if (index === 0) return; 
+        row.style.display = row.innerText.toLowerCase().includes(value) ? "" : "none";
+    });
+});
+
+// --- CATEGORY FILTER ---
+document.getElementById("categoryFilter").addEventListener("change", function () {
+    const filter = this.value.toLowerCase();
+    const rows = document.querySelectorAll("#placesTable tr");
+
+    rows.forEach((row, index) => {
+        if (index === 0) return;
+        const match = row.innerText.toLowerCase().includes(filter);
+        row.style.display = filter === "" || match ? "" : "none";
+    });
+});
+
+// --- DETAILS BOX ---
+function showDetails(city, country, time, cat) {
+    const box = document.getElementById("details-box");
+    box.style.display = "block";
+
+    document.getElementById("d-title").innerText = city + " (" + country + ")";
+    document.getElementById("d-info").innerHTML =
+        "<strong>Best Time:</strong> " + time +
+        "<br><strong>Category:</strong> " + cat +
+        "<br><br>This place is widely known for its beauty, culture, and unique travel experience.";
+}
+</script>
 
 </body>
 </html>

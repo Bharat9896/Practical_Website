@@ -3,45 +3,27 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Travel  Home</title>
+<title>Travel | Home</title>
 <link rel="stylesheet" href="../CSS/style.css" />
-<!-- <style>
-    body{font-family:Arial;background:#eef4ff;margin:0;padding:0;}
-    header{background:#0b3d91;color:white;padding:20px;text-align:center;}
-    nav a{color:white;margin:0 12px;text-decoration:none;font-weight:bold;}
-    nav a:hover{color:#ffdd57;}
 
-    .hero{text-align:center;padding:40px;margin-top:20px;background:#dce8ff;border-radius:10px;width:80%;margin:auto;}
-    .hero h2{font-size:32px;color:#0b3d91;margin-bottom:10px;}
-
-    .sec-heading{font-size:26px;margin-bottom:10px;color:#0b3d91;text-align:center;}
-
-    table{width:80%;margin:20px auto;border-collapse:collapse;background:white;border-radius:10px;overflow:hidden;}
-    th,td{border:1px solid #ccc;padding:12px;text-align:center;}
-    th{background:#0b3d91;color:white;font-size:17px;}
-    tr:hover{background:#f0f4ff;}
-    a{color:#0b3d91;font-weight:bold;}
-    a:hover{color:#ffdd57;}
-
-    iframe{border-radius:10px;border:2px solid #0b3d91;}
-    .tbl-img {
-    width: 130px;
-    height: 90px;
-    object-fit: cover;
-    border-radius: 10px;
-    border: 2px solid #0b3d91;
-    display: block;
-    margin: auto;
+<style>
+/* ====== Extra Home Highlights ====== */
+.highlight {
+    background: #ffdd57;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: bold;
 }
-
-
-</style> -->
+</style>
 </head>
+
 <body>
+
+<!---------------- HEADER ---------------->
 <header>
-<h1>Travel </h1>
+<h1>Explore The World</h1>
 <nav>
-<a href="index.html">Home</a>
+<a class="active" href="index.html">Home</a>
 <a href="places.html">Places</a>
 <a href="gallery.html">Gallery</a>
 <a href="contact.html">Contact</a>
@@ -49,13 +31,19 @@
 </nav>
 </header>
 
+<!---------------- HERO SECTION ---------------->
 <section class="hero">
-<h2>Explore the World</h2>
-<p>Find the best places to visit and travel tips.</p>
+<h2>Discover Amazing Destinations</h2>
+<p>
+Your journey starts here. Explore <span class="highlight">beautiful locations</span>, 
+plan perfect trips, and unlock expert travel advice.
+</p>
 </section>
 
+<!---------------- USEFUL LINKS TABLE ---------------->
 <section class="home-table">
-<h2 class="sec-heading">Useful Travel Links</h2>
+<h2 class="sec-heading">Top Travel Resources</h2>
+
 <table class="links-table">
 <tr>
 <th>Image</th>
@@ -65,63 +53,63 @@
 </tr>
 
 <tr>
-<td>
-    <img src="../images/lonelyPlanet.png" class="tbl-img">
-</td>
+<td><img src="../images/lonelyPlanet.png" class="tbl-img"></td>
 <td>Lonely Planet</td>
 <td>Guide</td>
 <td><a href="https://www.lonelyplanet.com" target="_blank">Open</a></td>
 </tr>
 
 <tr>
-<td>
-    <img src="https://picsum.photos/seed/flights/300/200.jpg" class="tbl-img">
-</td>
+<td><img src="https://picsum.photos/seed/flights/300/200.jpg" class="tbl-img"></td>
 <td>Skyscanner</td>
 <td>Flights</td>
 <td><a href="https://www.skyscanner.com" target="_blank">Open</a></td>
 </tr>
 
 <tr>
-<td>
-    <img src="https://picsum.photos/seed/hotels/300/200.jpg" class="tbl-img">
-</td>
+<td><img src="https://picsum.photos/seed/hotels/300/200.jpg" class="tbl-img"></td>
 <td>Booking.com</td>
 <td>Hotels</td>
 <td><a href="https://www.booking.com" target="_blank">Open</a></td>
 </tr>
 
 </table>
-
 </section>
 
-<section class="home-frame" style="text-align:center; margin:30px 0;">
-<h2 class="sec-heading">Travel Map Frame</h2>
-<iframe src="https://www.openstreetmap.org/export/embed.html" width="80%" height="350"></iframe>
+<!---------------- IFRAME SECTIONS ---------------->
+<section class="home-frame">
+<h2 class="sec-heading">Interactive Travel Map</h2>
+<iframe src="https://www.openstreetmap.org/export/embed.html"></iframe>
 </section>
 
-<section class="home-frame" style="text-align:center; margin:30px 0;">
-<h2 class="sec-heading">Travel Tips Frame</h2>
-<iframe src="https://www.wikivoyage.org" width="80%" height="350"></iframe>
+<section class="home-frame">
+<h2 class="sec-heading">Travel Tips & Guides</h2>
+<iframe src="https://www.wikivoyage.org"></iframe>
 </section>
 
-<section class="home-frame" style="text-align:center; margin:30px 0;">
-<h2 class="sec-heading">Travel Article Preview</h2>
-<iframe src="https://en.wikipedia.org/wiki/Travel" width="80%" height="350"></iframe>
+<section class="home-frame">
+<h2 class="sec-heading">What is Travel?</h2>
+<iframe src="https://en.wikipedia.org/wiki/Travel"></iframe>
 </section>
 
-<section class="intro-para" style="width:80%; margin:auto; text-align:center; margin-bottom:30px;">
+<!---------------- INTRO PARAGRAPH ---------------->
+<section class="intro-para">
 <p>
-Discover the world’s most <strong>beautiful destinations</strong> and learn essential
-travel tips to make your journey <em>smoother, safer,</em> and more enjoyable.
-Explore guides, maps, expert advice, and must-visit places.
+Travel exposes you to <span class="highlight">new cultures</span>, breathtaking 
+landscapes, and unforgettable experiences. Learn how to navigate, explore safely, 
+and make the most out of your adventures using our curated resources.
 </p>
 </section>
 
-<section class="home-frame" style="text-align:center; margin:30px 0;">
-<h2 class="sec-heading">Updated Travel Guide Frame</h2>
-<iframe src="https://en.wikivoyage.org/wiki/Main_Page" width="80%" height="350"></iframe>
+<section class="home-frame">
+<h2 class="sec-heading">Official Travel Guide</h2>
+<iframe src="https://en.wikivoyage.org/wiki/Main_Page"></iframe>
 </section>
+
+<!---------------- FOOTER ---------------->
+<footer>
+<p>© 2025 Travel Guide | Designed for Web Project | All Rights Reserved</p>
+</footer>
 
 </body>
 </html>
